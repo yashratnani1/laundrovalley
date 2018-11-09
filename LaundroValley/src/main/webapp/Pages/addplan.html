@@ -1,0 +1,34 @@
+<title>welcome</title>
+<head></head>
+<body>
+<h1>Add plan </h1>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+function test(){
+	var planid=document.getElementById("id").value;
+	var planamount=document.getElementById("amount").value;
+	var plantype=document.getElementById("type").value;
+	var apiEndpoint = "localhost:8089/addplan/"+planid+"/"+planamount+"/"+plantype;
+	alert("Hi")
+	  jquery.ajax({
+        dataType: "json",
+        url: apiEndpoint,
+        async: false,
+        context: document.body
+     }).success(function (data) {
+        alert(data);
+     });
+	
+	
+}
+
+
+</script>
+<form onsubmit="return test()">
+
+Enter Plan id<input type="text" id="id"><br> 
+Enter Plan amount<input type="text" id="amount"><br>
+Enter Plan type<input type="text" id="type"><br>
+<input type="submit"> 
+</form>
+</body>
