@@ -38,4 +38,7 @@ public class PlanController {
 		return planServiceObject.addPlan(tempPlan);
 		
 	}
+	public void showPlan(){
+		System.out.println("showing plans");
+	}
 }
